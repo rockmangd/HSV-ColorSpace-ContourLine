@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="keywords" content="color, color code, color codes, color find, color finder, color pick, color picker, css, find, hexadecimal, hexadecimal color, hexadecimal color code, hexadecimal color codes, hexadecimal colors, hsb, hsv, hsl, html, pick, picker, rgb" />
+		<meta name="description" content="An offline color picker tool" />
+		
+		<title>Offline Color Picker</title>
+		
+		<link rel="stylesheet" href="./css/style.css">
+		
+		<script src="./module/jquery.js"></script>
+		<script src="./module/jquery-mousewheel.js"></script>
+		<script src="./module/tinycolor.js"></script>
+		<script src="./script/script.js"></script>
+		<script src="./color/color.js"></script>
+		<!-- <script>!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-41044131-2","auto"),ga("send","pageview");</script> -->
+	</head>
+	<body>
+		<div id="container">
+			<div id="sv-map"><div id="sv-reticule"></div></div>
+			<div id="hue-map"><div id="hue-reticule"></div></div>
+			<div id="color-settings-container">
+				<h1>Offline Color Picker<span id="info"> <a href="javascript:void(0);" onclick="toInfo();" aria-label="Info">&#x24D8;</a></span></h1>
+				<input id="enter-color" autocomplete="off" placeholder="Enter a color" />
+				<input id="random-color" type="button" value="Random" onclick="buttonClick(tinycolor.random());" />
+				<table id="color-settings">
+					<tr><td><label for="red">Red</label></td><td><input class="modifiable" id="red"></td></tr>
+					<tr><td><label for="green">Green</label></td><td><input class="modifiable" id="green"></td></tr>
+					<tr><td><label for="blue">Blue</label></td><td><input class="modifiable" id="blue"></td></tr>
+					<tr><td><label for="hue">Hue</label></td><td><input class="modifiable" id="hue"></td></tr>
+					<tr><td><label for="saturation">Saturation</label></td><td><input class="modifiable" id="saturation"></td></tr>
+					<tr><td><label for="lightness">Lightness</label></td><td><input class="modifiable" id="lightness"></td></tr>
+					<tr><td><label for="value">Value</label></td><td><input class="modifiable" id="value"></td></tr>
+					<tr><td><label for="hexcode">Hex Code</label></td><td><input readonly id="hexcode"></td></tr>
+					<tr><td><label for="rgb">RGB</label></td><td><input readonly id="rgb"></td></tr>
+					<tr><td><label for="hsl">HSL</label></td><td><input readonly id="hsl"></td></tr>
+					<tr><td><label for="hsv">HSV</label></td><td><input readonly id="hsv"></td></tr>
+				</table>
+			</div>
+			<div id="color-schemes-container">
+				<h2><span class="large-only">Color Combos</span><span class="small-only">Color Combinations</span></h2>
+				<select>
+					<option value="complement">Complementary</option>
+					<option value="splitcomplement">Split Complementary</option>
+					<option value="triad">Triadic</option>
+					<option value="tetrad">Tetradic</option>
+					<option value="analogous">Analogous</option>
+					<option value="monochromatic">Monochromatic</option>
+				</select>
+				<ul id="color-schemes">
+				</ul>
+			</div>
+			<h2 id="saved-color-header">Saved Colors</h2>
+			<ul id="saved-colors">
+				<li class="option" id="clear"><button onclick="clearSavedColors();">Clear</button></li>
+				<li class="option" id="save"><button onclick="saveNewColor();">Save</button></li>
+			</ul>
+		</div>
+		<div id="container-info">
+			<div id="x-button"><a href="javascript:void(0);" onclick="toColorPicker();" aria-label="Close" title="Close">&#x274c;</a></div>
+			<h1>About</h1>
+			<!-- <p>Colorpicker.me is an offline color picker tool created by <a href="http://www.qvcool.com">Qvcool</a>.</p> -->
+			<h1>Tips</h1>
+			<ul>
+				<li>Link to specific colors directly by adding to the URL a pound sign ("#") followed by the color code in any format.
+				<li>Use the mouse wheel to input text field values while hovering over them or the hue while hovering over the saturation-value palette or hue slider.
+				<li>Store multiple colors at once by clicking the "Save" button in the lower left corner. These will remain saved until you click the "Clear" button next to it, even if you leave the page.
+				<li>After you find a fitting color, you can export it as a hexadecimal, RGB, HSV, or HSL color code.
+			</ul>
+			<h1>Feedback</h1>
+			<!-- <p>Found a problem? Have a recommendation? Email me at <a href="mailto:feedback@colorpicker.me">feedback@colorpicker.me</a>.</p> -->
+			<p>复制粘帖</p>>
+		</div>
+		
+		<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+		
+		<!-- Colorpicker.me ad unit 1 -->
+		<div class="ad-container right"><ins class="adsbygoogle left" style="display:block" data-ad-client="ca-pub-8499472909581016" data-ad-slot="4824748688" data-ad-format="auto"></ins></div>
+		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+		
+		<!-- Colorpicker.me ad unit 2 -->
+		<div class="ad-container left"><ins class="adsbygoogle right" style="display:block" data-ad-client="ca-pub-8499472909581016" data-ad-slot="4207469884" data-ad-format="auto"></ins></div>
+		<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+	</body>
+</html>
